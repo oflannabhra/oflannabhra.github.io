@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: theme:post
+title: Trello Hash
 category : code
 tagline: "solving Trello's developer challenge"
-tags : [php, code, trello, hash]
 ---
 
 Our team was looking into project / client management solutions the other day and I came across [Trello](http://www.trello.com). While looking around their site, I stumbled upon their [developer](https://trello.com/jobs/developer) job listing, which included a challenge to solve as part of the application process. It looked pretty fun, so I tackled it when I got home. 

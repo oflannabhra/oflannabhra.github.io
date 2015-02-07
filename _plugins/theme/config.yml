@@ -1,0 +1,23 @@
+# Settings for main header
+title: 'Oflannabhra'
+subtitle: 'code, thoughts'
+
+# Links for main navigation
+nav:
+  - { url: '/', title: 'Home' }
+  - { url: '/archive', title: 'Archive' }
+  - { url: '/feed', title: 'RSS' }
+  - { url: '/cv', title: 'CV'}
+
+# Settings for category index generator
+category:
+  prefix: Category
+  url:    category
+
+post_index:
+  excerpt_posts: true
+  permalink_label: "Perm"
+  read_more_label: "Continue Reading &rarr;"
+
+# Center the text in post and page headings.
+center-headings: true

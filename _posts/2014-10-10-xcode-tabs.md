@@ -1,9 +1,8 @@
 ---
-layout: post
+layout: theme:post
 title: "Xcode Tabs"
 description: ""
-category: 
-tags: []
+category: code
 ---
 
 I was getting pretty frustrated with Xcode 6 the other day. Specifically, I was getting irritated by constantly having to fiddle with my layout continually getting adjusted. 
