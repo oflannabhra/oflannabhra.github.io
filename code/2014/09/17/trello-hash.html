@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="" lang="en" >
+<head>
+<title>Trello Hash</title>
+<meta charset="utf-8">
+
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="http://oflannabhra.com/code/2014/09/17/trello-hash.html" rel="canonical">
+<meta name='generator' content='Jekyll v2.5.3, Octopress v3.0.0.rc.32 Octopress Ink v1.0.0.rc.38'>
+
+<link href='/stylesheets/all-a94935b8d46ead4b3b4626f4eda6a7e4.css' media='all' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <div class="site">
+    <div class="site-content"><div class="site-top"><div class="site-top-content">
+<header role="banner" class="site-header">
+  <h1 class="site-title"><a class="site-title-link" href="/"/>Oflannabhra</a></h1>
+  <p class='site-subtitle'>code, thoughts</p>
+</header>
+<nav class='site-nav' role="navigation">
+    <a class="site-nav-link " href="/"/>Home</a>
+    <a class="site-nav-link " href="/archive/">Archive</a>
+    <a class="site-nav-link " href="/feed/">RSS</a>
+    <a class="site-nav-link " href="/cv/">CV</a>
+</nav>
+</div></div>
+<div class="site-main">
+<div class="main ">
+  <div class="main-content"><article class="post entry  " role="article">
+  
+    <header class="entry-header">
+  
+    
+    <h1 class="entry-title">Trello&nbsp;Hash</h1>
+    
+    <div class="entry-meta"><time class='entry-date' datetime='2014-09-17T00:00:00-04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span></time></div>
+    <div class="entry-social header"><!-- Post header social buttons go here --></div>
+    
+  </header>
+
+  <div class="entry-content"><p>Our team was looking into project / client management solutions the other day and I came across <a href="http://www.trello.com">Trello</a>. While looking around their site, I stumbled upon their <a href="https://trello.com/jobs/developer">developer</a> job listing, which included a challenge to solve as part of the application process. It looked pretty fun, so I tackled it when I got home. </p>
+
+<h2 id="the-challenge">The Challenge</h2>
+
+<p>The challenge, in a nutshell, is to reverse engineer a sample hash function. The give pseudocode for the function is as follows:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno">1</span> <span class="nx">Int64</span> <span class="nb">hash</span> <span class="p">(</span><span class="nx">String</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">2</span>     <span class="nx">Int64</span> <span class="nx">h</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="lineno">3</span>     <span class="nx">String</span> <span class="nx">letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span>
+<span class="lineno">4</span>     <span class="k">for</span><span class="p">(</span><span class="nx">Int32</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="o">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">5</span>         <span class="nx">h</span> <span class="o">=</span> <span class="p">(</span><span class="nx">h</span> <span class="o">*</span> <span class="mi">37</span> <span class="o">+</span> <span class="nx">letters</span><span class="o">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span>
+<span class="lineno">6</span>     <span class="p">}</span>
+<span class="lineno">7</span>     <span class="k">return</span> <span class="nx">h</span>
+<span class="lineno">8</span> <span class="p">}</span></code></pre></div>
+
+<p>The function should work as follows: <code>hash("leepadg")</code> returns <code>680131659347</code>. The question is, what string returns <code>956446786872726</code>?</p>
+
+<h2 id="my-solution">My solution</h2>
+
+<p>To really get an understanding of the pseudocode, I decided to implement it in <code>php</code>. Essentially a one-to-one translation is the following:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno"> 1</span> <span class="k">function</span> <span class="nf">hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">)</span>
+<span class="lineno"> 2</span> <span class="p">{</span>
+<span class="lineno"> 3</span> 	<span class="nv">$h</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> 	<span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
+<span class="lineno"> 6</span> 
+<span class="lineno"> 7</span> 	<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$s</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
+<span class="lineno"> 8</span> 		<span class="nv">$pos</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$letters</span><span class="p">,</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$i</span><span class="p">]);</span>
+<span class="lineno"> 9</span> 		<span class="k">if</span> <span class="p">(</span><span class="nv">$pos</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno">10</span> 			<span class="nv">$char</span> <span class="o">=</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$i</span><span class="p">];</span>
+<span class="lineno">11</span> 			<span class="nb">unset</span><span class="p">(</span><span class="nv">$pos</span><span class="p">);</span>
+<span class="lineno">12</span> 			<span class="k">throw</span> <span class="k">new</span> <span class="nx">ErrorException</span><span class="p">(</span><span class="s2">&quot;The character </span><span class="si">{</span><span class="nv">$char</span><span class="si">}</span><span class="s2"> does not exist in the string </span><span class="si">{</span><span class="nv">$letters</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
+<span class="lineno">13</span> 		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="lineno">14</span> 			<span class="nv">$h</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$h</span> <span class="o">*</span> <span class="mi">37</span> <span class="o">+</span> <span class="nv">$pos</span><span class="p">);</span>
+<span class="lineno">15</span> 		<span class="p">}</span>
+<span class="lineno">16</span> 
+<span class="lineno">17</span> 	<span class="p">}</span>
+<span class="lineno">18</span> 	<span class="k">return</span> <span class="nv">$h</span><span class="p">;</span>
+<span class="lineno">19</span> <span class="p">}</span></code></pre></div>
+
+<h3 id="reimplementing-the-function-recursively">Reimplementing the function recursively</h3>
+
+<p>While going through this, it seemed to me that this would be pretty easy to implement recursively, and I definitely felt that to reverse the hash, I’d have to do it recursively. So, I rewrite the hash function using recursion. To do this, we need to also know how deep to recurse (so that we don’t create an infinite recursion loop). So, as a second parameter, we are going to pass <code>strlen($s)</code>.</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno"> 1</span> <span class="k">function</span> <span class="nf">recursive_hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">,</span> <span class="nv">$j</span><span class="p">)</span>
+<span class="lineno"> 2</span> <span class="p">{</span>
+<span class="lineno"> 3</span> 	<span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> 	<span class="k">if</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 6</span> 		<span class="k">return</span> <span class="mi">7</span><span class="p">;</span>
+<span class="lineno"> 7</span> 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="lineno"> 8</span> 		<span class="k">return</span> <span class="nx">recursive_hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">,</span> <span class="o">--</span><span class="nv">$j</span><span class="p">)</span> <span class="o">*</span> <span class="mi">37</span> <span class="o">+</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$letters</span><span class="p">,</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$j</span><span class="p">]);</span>
+<span class="lineno"> 9</span> 	<span class="p">}</span>
+<span class="lineno">10</span> <span class="p">}</span></code></pre></div>
+
+<h3 id="reversing-the-function">Reversing the function</h3>
+
+<p>So, in thinking about reversing the hash, I knew that we’d be able to at least get the last letter of the final string (ie, the <code>strpos($letters, $s[$j])</code>) by <code>$number % 37</code>. Then, we could reduce the number by reversing the math with <code>$number - ($number % 37) / 37</code>. I tested this out manually, and verified that it worked, and knew this result is what we would recurse on. But, we’d need to kill recursion at some point, right? That math would just go into negative numbers. So, we’d need a test to kill the recursion. That led me to this final solution:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno"> 1</span> <span class="k">function</span> <span class="nf">reverse_hash2</span><span class="p">(</span><span class="nv">$number</span><span class="p">)</span>
+<span class="lineno"> 2</span> <span class="p">{</span>
+<span class="lineno"> 3</span> 	<span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
+<span class="lineno"> 4</span> 
+<span class="lineno"> 5</span> 	<span class="nv">$reduced</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">-</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">%</span> <span class="mi">37</span><span class="p">))</span> <span class="o">/</span> <span class="mi">37</span><span class="p">;</span>
+<span class="lineno"> 6</span> 	<span class="k">if</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="p">{</span>
+<span class="lineno"> 7</span> 		<span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+<span class="lineno"> 8</span> 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="lineno"> 9</span> 	 	<span class="k">return</span> <span class="nx">reverse_hash2</span><span class="p">(</span><span class="nv">$reduced</span><span class="p">)</span> <span class="o">.</span> <span class="nv">$letters</span><span class="p">[</span><span class="nv">$number</span><span class="o">%</span><span class="mi">37</span><span class="p">];</span>
+<span class="lineno">10</span> 	<span class="p">}</span>	
+<span class="lineno">11</span> <span class="p">}</span></code></pre></div>
+
+<p>Notice that we need to concatenate the string as the nested functions exit.</p>
+
+<hr />
+
+<p>I’ve got the full code available on <a href="https://github.com/oflannabhra/trello-app">GitHub</a>. Thanks to Trello for a fun challenge!!</p>
+</div>
+
+  <footer class='entry-footer' role='contentinfo'>
+    <div class="entry-meta">
+      
+      
+      
+      <span class='posted-date'><time class='entry-date' datetime='2014-09-17T00:00:00-04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span> <span class='time'>12:00 am</span></time></span>
+       
+        &mdash; <span class="categories"><a class='category' href='/categories/code/'>code</a></span>
+      
+    </div>
+    <div class="entry-social footer"><!-- Post footer social buttons go here --></div>
+  </footer>
+</article>
+<nav role="pagination" class="post-nav">
+
+
+<a class="next-post" href="/code/2014/10/10/xcode-tabs.html" title="Next Article: Xcode Tabs">
+  <div class='next-post-marker'>Next Article <span class='next-post-arrow'>&rarr;</span></div>
+  <h6 class='next-post-title'>Xcode&nbsp;Tabs</h6>
+  <div class="next-post-date"><time class='entry-date' datetime='2014-10-10T00:00:00-04:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span></time></div>
+</a>
+
+</nav>
+
+</div>
+</div>
+</div>
+<div class="site-bottom"><div class="site-bottom-content">
+<footer class='site-footer' role="contentinfo">
+  <p class='footer-copyright'>Copyright © 2015 -  - Powered by Octopress</p>
+  
+  
+  <form class='site-search' action="https://google.com/search" method="get">
+  <input type="hidden" name="sitesearch" value="oflannabhra.com">
+  <input class="search-input" type="text" name="q" results="0" placeholder="Search&hellip;" accesskey="/">
+</form>
+</footer>
+</div></div>
+</div>
+  
+  </div>
+</body>
+</html>
