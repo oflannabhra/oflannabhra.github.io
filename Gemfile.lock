@@ -1,7 +1,7 @@
 GIT
-  remote: https://github.com/octopress/genesis-theme.git
-  revision: 0d842fd533bbcadfc8987b9480510c1e5161215d
-  ref: 0d842fd
+  remote: git://github.com/oflannabhra/genesis-theme.git
+  revision: 1be0e1ac820909f84555ea552c74a38b6f3e6d11
+  branch: master
   specs:
     octopress-genesis-theme (0.0.4)
       octopress-abort-tag
