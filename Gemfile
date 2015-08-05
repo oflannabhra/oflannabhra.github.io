@@ -5,8 +5,9 @@ gem 'octopress-ink'
 
 
 group :jekyll_plugins do
-  gem 'octopress-genesis-theme', :github => 'oflannabhra/genesis-theme', :branch => 'master'
+  gem 'octopress-bootswatch', :github => 'oflannabhra/octopress-bootswatch', :branch => 'development'
   gem 'octopress-gist'
   gem 'octopress-codefence'
   gem 'octopress-markdown-tag'
+  gem 'octopress-spacegray', "github" => 'oflannabhra/octopress-spacegray', :branch => 'development'
 end

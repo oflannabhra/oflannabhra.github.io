@@ -10,15 +10,15 @@
 <link href="http://oflannabhra.com/code/2014/09/17/trello-hash.html" rel="canonical">
 <meta name='generator' content='Jekyll v2.5.3, Octopress v3.0.0.rc.32 Octopress Ink v1.0.0.rc.38'>
 
-<link href='/stylesheets/all-5d886c44401563653d0ca7f2ccdac0ff.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/all-d344c00b0855fb4aafacdbda51b240c0.css' media='all' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="container">
     <div class="site-content"><div class="site-top"><div class="site-top-content">
-<header role="banner" class="site-header">
+<!-- <header role="banner" class="site-header">
   <h1 class="site-title"><a class="site-title-link" href="/"/>Oflannabhra</a></h1>
   <small class='site-subtitle'>  \oh-flan-uh-brah\</small>
-</header>
+</header> -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -55,7 +55,7 @@
 				
 				
 				
-				<li class=""><a class="site-nav-link" href="/archive/">Archive</a></li>
+				<li class=""><a class="site-nav-link" href="/about/">About</a></li>
 				
 				
 				
@@ -81,8 +81,12 @@
     <header class="entry-header">
   
     
-    <h1 class="entry-title">Trello&nbsp;Hash</h1>
-    <h2 class="entry-subtitle">solving Trello's developer challenge</h2>
+    <h1 class="entry-title">Trello&nbsp;Hash
+      
+      <small class="entry-subtitle">solving Trello's developer challenge</small>
+      
+    </h1>
+    
     <div class="entry-meta"><time class='entry-date' datetime='2014-09-17T00:00:00-04:00'><span class='date'><span class='date-month'>Sep</span> <span class='date-day'>17</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span></time></div>
     <div class="entry-social header"><!-- Post header social buttons go here --></div>
     
@@ -90,81 +94,76 @@
 
   <div class="entry-content"><p>Our team was looking into project / client management solutions the other day and I came across <a href="http://www.trello.com">Trello</a>. While looking around their site, I stumbled upon their <a href="https://trello.com/jobs/developer">developer</a> job listing, which included a challenge to solve as part of the application process. It looked pretty fun, so I tackled it when I got home. </p>
 
-<h2 id="the-challenge">The Challenge</h2>
+<h2>The Challenge</h2>
 
 <p>The challenge, in a nutshell, is to reverse engineer a sample hash function. The give pseudocode for the function is as follows:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno">1</span> <span class="nx">Int64</span> <span class="nb">hash</span> <span class="p">(</span><span class="nx">String</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">2</span>     <span class="nx">Int64</span> <span class="nx">h</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="lineno">3</span>     <span class="nx">String</span> <span class="nx">letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span>
-<span class="lineno">4</span>     <span class="k">for</span><span class="p">(</span><span class="nx">Int32</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">s</span><span class="o">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">5</span>         <span class="nx">h</span> <span class="o">=</span> <span class="p">(</span><span class="nx">h</span> <span class="o">*</span> <span class="mi">37</span> <span class="o">+</span> <span class="nx">letters</span><span class="o">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="nx">s</span><span class="p">[</span><span class="nx">i</span><span class="p">]))</span>
-<span class="lineno">6</span>     <span class="p">}</span>
-<span class="lineno">7</span>     <span class="k">return</span> <span class="nx">h</span>
-<span class="lineno">8</span> <span class="p">}</span></code></pre></div>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="n">Int64</span> <span class="nf">hash</span> <span class="p">(</span><span class="n">String</span> <span class="n">s</span><span class="p">)</span> <span class="p">&#x7b;</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">Int64</span> <span class="n">h</span> <span class="p">=</span> <span class="m">7</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="n">String</span> <span class="n">letters</span> <span class="p">=</span> <span class="s">&quot;acdegilmnoprstuw&quot;</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="k">for</span><span class="p">(</span><span class="n">Int32</span> <span class="n">i</span> <span class="p">=</span> <span class="m">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">;</span> <span class="n">i</span><span class="p">++)</span> <span class="p">&#x7b;</span>
+</div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="n">h</span> <span class="p">=</span> <span class="p">(</span><span class="n">h</span> <span class="p">*</span> <span class="m">37</span> <span class="p">+</span> <span class="n">letters</span><span class="p">.</span><span class="n">indexOf</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="p">&#x7d;</span>
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="k">return</span> <span class="n">h</span>
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="p">&#x7d;</span></div></div></pre></div></figure>
 
-<p>The function should work as follows: <code>hash("leepadg")</code> returns <code>680131659347</code>. The question is, what string returns <code>956446786872726</code>?</p>
+<p>The function should work as follows: <code>hash(&quot;leepadg&quot;)</code> returns <code>680131659347</code>. The question is, what string returns <code>956446786872726</code>?</p>
 
-<h2 id="my-solution">My solution</h2>
+<h2>My solution</h2>
 
 <p>To really get an understanding of the pseudocode, I decided to implement it in <code>php</code>. Essentially a one-to-one translation is the following:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno"> 1</span> <span class="k">function</span> <span class="nf">hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">)</span>
-<span class="lineno"> 2</span> <span class="p">{</span>
-<span class="lineno"> 3</span> 	<span class="nv">$h</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span> 	<span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
-<span class="lineno"> 6</span> 
-<span class="lineno"> 7</span> 	<span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$s</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> 
-<span class="lineno"> 8</span> 		<span class="nv">$pos</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$letters</span><span class="p">,</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$i</span><span class="p">]);</span>
-<span class="lineno"> 9</span> 		<span class="k">if</span> <span class="p">(</span><span class="nv">$pos</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno">10</span> 			<span class="nv">$char</span> <span class="o">=</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$i</span><span class="p">];</span>
-<span class="lineno">11</span> 			<span class="nb">unset</span><span class="p">(</span><span class="nv">$pos</span><span class="p">);</span>
-<span class="lineno">12</span> 			<span class="k">throw</span> <span class="k">new</span> <span class="nx">ErrorException</span><span class="p">(</span><span class="s2">&quot;The character </span><span class="si">{</span><span class="nv">$char</span><span class="si">}</span><span class="s2"> does not exist in the string </span><span class="si">{</span><span class="nv">$letters</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">);</span>
-<span class="lineno">13</span> 		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<span class="lineno">14</span> 			<span class="nv">$h</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$h</span> <span class="o">*</span> <span class="mi">37</span> <span class="o">+</span> <span class="nv">$pos</span><span class="p">);</span>
-<span class="lineno">15</span> 		<span class="p">}</span>
-<span class="lineno">16</span> 
-<span class="lineno">17</span> 	<span class="p">}</span>
-<span class="lineno">18</span> 	<span class="k">return</span> <span class="nv">$h</span><span class="p">;</span>
-<span class="lineno">19</span> <span class="p">}</span></code></pre></div>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">function</span> <span class="nf">hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">)</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="p">&#x7b;</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="nv">$h</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>   <span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>   <span class="k">for</span> <span class="p">(</span><span class="nv">$i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nv">$i</span> <span class="o">&lt;</span> <span class="nb">strlen</span><span class="p">(</span><span class="nv">$s</span><span class="p">);</span> <span class="nv">$i</span><span class="o">++</span><span class="p">)</span> <span class="p">&#x7b;</span> 
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="nv">$pos</span> <span class="o">=</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$letters</span><span class="p">,</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$i</span><span class="p">]);</span>
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="k">if</span> <span class="p">(</span><span class="nv">$pos</span> <span class="o">===</span> <span class="k">false</span><span class="p">)</span> <span class="p">&#x7b;</span>
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>           <span class="nv">$char</span> <span class="o">=</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$i</span><span class="p">];</span>
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'>           <span class="nb">unset</span><span class="p">(</span><span class="nv">$pos</span><span class="p">);</span>
+</div></div><div data-line='12' class='code-highlight-row numbered'><div class='code-highlight-line'>           <span class="k">throw</span> <span class="k">new</span> <span class="nx">ErrorException</span><span class="p">(</span><span class="s2">&quot;The character </span><span class="si">&#x7b;</span><span class="nv">$char</span><span class="si">&#x7d;</span><span class="s2"> does not exist in the string </span><span class="si">&#x7b;</span><span class="nv">$letters</span><span class="si">&#x7d;</span><span class="s2">&quot;</span><span class="p">);</span>
+</div></div><div data-line='13' class='code-highlight-row numbered'><div class='code-highlight-line'>       <span class="p">&#x7d;</span> <span class="k">else</span> <span class="p">&#x7b;</span>
+</div></div><div data-line='14' class='code-highlight-row numbered'><div class='code-highlight-line'>           <span class="nv">$h</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$h</span> <span class="o">*</span> <span class="mi">37</span> <span class="o">+</span> <span class="nv">$pos</span><span class="p">);</span>
+</div></div><div data-line='15' class='code-highlight-row numbered'><div class='code-highlight-line'>       <span class="p">&#x7d;</span>
+</div></div><div data-line='16' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='17' class='code-highlight-row numbered'><div class='code-highlight-line'> <span class="p">&#x7d;</span>
+</div></div><div data-line='18' class='code-highlight-row numbered'><div class='code-highlight-line'>   <span class="k">return</span> <span class="nv">$h</span><span class="p">;</span>
+</div></div><div data-line='19' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="p">&#x7d;</span></div></div></pre></div></figure>
 
-<h3 id="reimplementing-the-function-recursively">Reimplementing the function recursively</h3>
+<h3>Reimplementing the function recursively</h3>
 
-<p>While going through this, it seemed to me that this would be pretty easy to implement recursively, and I definitely felt that to reverse the hash, I’d have to do it recursively. So, I rewrite the hash function using recursion. To do this, we need to also know how deep to recurse (so that we don’t create an infinite recursion loop). So, as a second parameter, we are going to pass <code>strlen($s)</code>.</p>
+<p>While going through this, it seemed to me that this would be pretty easy to implement recursively, and I definitely felt that to reverse the hash, I&#39;d have to do it recursively. So, I rewrite the hash function using recursion. To do this, we need to also know how deep to recurse (so that we don&#39;t create an infinite recursion loop). So, as a second parameter, we are going to pass <code>strlen($s)</code>.</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno"> 1</span> <span class="k">function</span> <span class="nf">recursive_hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">,</span> <span class="nv">$j</span><span class="p">)</span>
-<span class="lineno"> 2</span> <span class="p">{</span>
-<span class="lineno"> 3</span> 	<span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span> 	<span class="k">if</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno"> 6</span> 		<span class="k">return</span> <span class="mi">7</span><span class="p">;</span>
-<span class="lineno"> 7</span> 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<span class="lineno"> 8</span> 		<span class="k">return</span> <span class="nx">recursive_hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">,</span> <span class="o">--</span><span class="nv">$j</span><span class="p">)</span> <span class="o">*</span> <span class="mi">37</span> <span class="o">+</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$letters</span><span class="p">,</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$j</span><span class="p">]);</span>
-<span class="lineno"> 9</span> 	<span class="p">}</span>
-<span class="lineno">10</span> <span class="p">}</span></code></pre></div>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">function</span> <span class="nf">recursive_hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">,</span> <span class="nv">$j</span><span class="p">)</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="p">&#x7b;</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>   <span class="k">if</span> <span class="p">(</span><span class="nv">$j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">&#x7b;</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="k">return</span> <span class="mi">7</span><span class="p">;</span>
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="p">&#x7d;</span> <span class="k">else</span> <span class="p">&#x7b;</span>
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="k">return</span> <span class="nx">recursive_hash2</span><span class="p">(</span><span class="nv">$s</span><span class="p">,</span> <span class="o">--</span><span class="nv">$j</span><span class="p">)</span> <span class="o">*</span> <span class="mi">37</span> <span class="o">+</span> <span class="nb">strpos</span><span class="p">(</span><span class="nv">$letters</span><span class="p">,</span> <span class="nv">$s</span><span class="p">[</span><span class="nv">$j</span><span class="p">]);</span>
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="p">&#x7d;</span>
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="p">&#x7d;</span></div></div></pre></div></figure>
 
-<h3 id="reversing-the-function">Reversing the function</h3>
+<h3>Reversing the function</h3>
 
-<p>So, in thinking about reversing the hash, I knew that we’d be able to at least get the last letter of the final string (ie, the <code>strpos($letters, $s[$j])</code>) by <code>$number % 37</code>. Then, we could reduce the number by reversing the math with <code>$number - ($number % 37) / 37</code>. I tested this out manually, and verified that it worked, and knew this result is what we would recurse on. But, we’d need to kill recursion at some point, right? That math would just go into negative numbers. So, we’d need a test to kill the recursion. That led me to this final solution:</p>
+<p>So, in thinking about reversing the hash, I knew that we&#39;d be able to at least get the last letter of the final string (ie, the <code>strpos($letters, $s[$j])</code>) by <code>$number % 37</code>. Then, we could reduce the number by reversing the math with <code>$number - ($number % 37) / 37</code>. I tested this out manually, and verified that it worked, and knew this result is what we would recurse on. But, we&#39;d need to kill recursion at some point, right? That math would just go into negative numbers. So, we&#39;d need a test to kill the recursion. That led me to this final solution:</p>
 
-<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="lineno"> 1</span> <span class="k">function</span> <span class="nf">reverse_hash2</span><span class="p">(</span><span class="nv">$number</span><span class="p">)</span>
-<span class="lineno"> 2</span> <span class="p">{</span>
-<span class="lineno"> 3</span> 	<span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
-<span class="lineno"> 4</span> 
-<span class="lineno"> 5</span> 	<span class="nv">$reduced</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">-</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">%</span> <span class="mi">37</span><span class="p">))</span> <span class="o">/</span> <span class="mi">37</span><span class="p">;</span>
-<span class="lineno"> 6</span> 	<span class="k">if</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="p">{</span>
-<span class="lineno"> 7</span> 		<span class="k">return</span> <span class="k">null</span><span class="p">;</span>
-<span class="lineno"> 8</span> 	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-<span class="lineno"> 9</span> 	 	<span class="k">return</span> <span class="nx">reverse_hash2</span><span class="p">(</span><span class="nv">$reduced</span><span class="p">)</span> <span class="o">.</span> <span class="nv">$letters</span><span class="p">[</span><span class="nv">$number</span><span class="o">%</span><span class="mi">37</span><span class="p">];</span>
-<span class="lineno">10</span> 	<span class="p">}</span>	
-<span class="lineno">11</span> <span class="p">}</span></code></pre></div>
+<figure class='code-highlight-figure'><div class='code-highlight'><pre class='code-highlight-pre'><div data-line='1' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="k">function</span> <span class="nf">reverse_hash2</span><span class="p">(</span><span class="nv">$number</span><span class="p">)</span>
+</div></div><div data-line='2' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="p">&#x7b;</span>
+</div></div><div data-line='3' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="nv">$letters</span> <span class="o">=</span> <span class="s2">&quot;acdegilmnoprstuw&quot;</span><span class="p">;</span>
+</div></div><div data-line='4' class='code-highlight-row numbered'><div class='code-highlight-line'> </div></div><div data-line='5' class='code-highlight-row numbered'><div class='code-highlight-line'>   <span class="nv">$reduced</span> <span class="o">=</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">-</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">%</span> <span class="mi">37</span><span class="p">))</span> <span class="o">/</span> <span class="mi">37</span><span class="p">;</span>
+</div></div><div data-line='6' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="k">if</span> <span class="p">(</span><span class="nv">$number</span> <span class="o">&lt;</span> <span class="mi">16</span><span class="p">)</span> <span class="p">&#x7b;</span>
+</div></div><div data-line='7' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="k">return</span> <span class="k">null</span><span class="p">;</span>
+</div></div><div data-line='8' class='code-highlight-row numbered'><div class='code-highlight-line'>    <span class="p">&#x7d;</span> <span class="k">else</span> <span class="p">&#x7b;</span>
+</div></div><div data-line='9' class='code-highlight-row numbered'><div class='code-highlight-line'>        <span class="k">return</span> <span class="nx">reverse_hash2</span><span class="p">(</span><span class="nv">$reduced</span><span class="p">)</span> <span class="o">.</span> <span class="nv">$letters</span><span class="p">[</span><span class="nv">$number</span><span class="o">%</span><span class="mi">37</span><span class="p">];</span>
+</div></div><div data-line='10' class='code-highlight-row numbered'><div class='code-highlight-line'>   <span class="p">&#x7d;</span>   
+</div></div><div data-line='11' class='code-highlight-row numbered'><div class='code-highlight-line'><span class="p">&#x7d;</span></div></div></pre></div></figure>
 
 <p>Notice that we need to concatenate the string as the nested functions exit.</p>
 
-<hr />
+<hr>
 
-<p>I’ve got the full code available on <a href="https://github.com/oflannabhra/trello-app">GitHub</a>. Thanks to Trello for a fun challenge!!</p>
+<p>I&#39;ve got the full code available on <a href="https://github.com/oflannabhra/trello-app">GitHub</a>. Thanks to Trello for a fun challenge!!</p>
 </div>
 
   <footer class='entry-footer' role='contentinfo'>
@@ -179,7 +178,27 @@
         &mdash; <span class="categories"><a class='category' href='/categories/code/'>code</a></span>
       
     </div>
-    <div class="entry-social footer"><!-- Post footer social buttons go here --></div>
+    <div class="entry-social footer"><!-- Post footer social buttons go here -->
+
+<div class="row">
+	<div class="text-center col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 col-lg-2 col-md-offset-5">
+	
+	<a href="http://twitter.com/oflannabhra"><span class="fa fa-twitter-square fa-lg"></span></a>
+	
+	
+	<a href="http://twitter.com/Ben Flannery"><span class="fa fa-facebook-square fa-lg"></span></a>
+	
+	
+	<a href="http://instagram.com/oflannabhra"><span class="fa fa-instagram fa-lg"></span></a>
+	
+	
+	<a href="http://github.com/oflannabhra"><span class="fa fa-github fa-lg"></span></a>
+	
+	
+	<a href="mailto:oflannabhra@gmail.com"><span class="fa fa-envelope fa-lg"></span></a>
+	
+</div>
+</div></div>
   </footer>
 </article>
 <ul class="pager">

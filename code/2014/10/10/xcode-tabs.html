@@ -10,15 +10,15 @@
 <link href="http://oflannabhra.com/code/2014/10/10/xcode-tabs.html" rel="canonical">
 <meta name='generator' content='Jekyll v2.5.3, Octopress v3.0.0.rc.32 Octopress Ink v1.0.0.rc.38'>
 <meta name="description" content="">
-<link href='/stylesheets/all-5d886c44401563653d0ca7f2ccdac0ff.css' media='all' rel='stylesheet' type='text/css'>
+<link href='/stylesheets/all-d344c00b0855fb4aafacdbda51b240c0.css' media='all' rel='stylesheet' type='text/css'>
 </head>
 <body>
   <div class="container">
     <div class="site-content"><div class="site-top"><div class="site-top-content">
-<header role="banner" class="site-header">
+<!-- <header role="banner" class="site-header">
   <h1 class="site-title"><a class="site-title-link" href="/"/>Oflannabhra</a></h1>
   <small class='site-subtitle'>  \oh-flan-uh-brah\</small>
-</header>
+</header> -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -55,7 +55,7 @@
 				
 				
 				
-				<li class=""><a class="site-nav-link" href="/archive/">Archive</a></li>
+				<li class=""><a class="site-nav-link" href="/about/">About</a></li>
 				
 				
 				
@@ -81,8 +81,12 @@
     <header class="entry-header">
   
     
-    <h1 class="entry-title">Xcode&nbsp;Tabs</h1>
-    <h2 class="entry-subtitle">automating Xcode</h2>
+    <h1 class="entry-title">Xcode&nbsp;Tabs
+      
+      <small class="entry-subtitle">automating Xcode</small>
+      
+    </h1>
+    
     <div class="entry-meta"><time class='entry-date' datetime='2014-10-10T00:00:00-04:00'><span class='date'><span class='date-month'>Oct</span> <span class='date-day'>10</span><span class='date-suffix'>th</span>, <span class='date-year'>2014</span></span></time></div>
     <div class="entry-social header"><!-- Post header social buttons go here --></div>
     
@@ -90,52 +94,55 @@
 
   <div class="entry-content"><p>I was getting pretty frustrated with Xcode 6 the other day. Specifically, I was getting irritated by constantly having to fiddle with my layout continually getting adjusted. </p>
 
-<h2 id="the-problem">The Problem</h2>
+<h2>The Problem</h2>
 
-<p>Like many IDEs, Xcode’s layout is divided into panes.</p>
+<p>Like many IDEs, Xcode&#39;s layout is divided into panes.</p>
 
 <ul>
-  <li>Navigator (left side pane)</li>
-  <li>Editor (center)</li>
-  <li>Utilities (right side pane)</li>
-  <li>Debug/Console (bottom pane)</li>
+<li>Navigator (left side pane)</li>
+<li>Editor (center)</li>
+<li>Utilities (right side pane)</li>
+<li>Debug/Console (bottom pane)</li>
 </ul>
 
 <p>Each of these have quite a few different contextual modes</p>
 
-<p><img src="http://oflannabhra.com/assets/img/navigator.png" alt="The Navigator Pane selction menu" /></p>
+<p><img src="http://oflannabhra.com/assets/img/navigator.png" alt="The Navigator Pane selction menu"></p>
 
-<h3 id="navigator-pane">Navigator Pane</h3>
+<h3>Navigator Pane</h3>
+
 <ul>
-  <li>Project Navigator (<code>⌘ 1</code>)</li>
-  <li>Symbol Navigator (<code>⌘ 2</code>) </li>
-  <li>Find Navigator (<code>⌘ 3</code>)</li>
-  <li>Issue Navigator (<code>⌘ 4</code>)</li>
-  <li>Test Navigator (<code>⌘ 5</code>)</li>
-  <li>Debug Navigator (<code>⌘ 6</code>)</li>
-  <li>Breakpoint Navigator (<code>⌘ 7</code>)</li>
-  <li>Report Navigator (<code>⌘ 8</code>)</li>
+<li>Project Navigator (<code>⌘ 1</code>)</li>
+<li>Symbol Navigator (<code>⌘ 2</code>) </li>
+<li>Find Navigator (<code>⌘ 3</code>)</li>
+<li>Issue Navigator (<code>⌘ 4</code>)</li>
+<li>Test Navigator (<code>⌘ 5</code>)</li>
+<li>Debug Navigator (<code>⌘ 6</code>)</li>
+<li>Breakpoint Navigator (<code>⌘ 7</code>)</li>
+<li>Report Navigator (<code>⌘ 8</code>)</li>
 </ul>
 
-<p><img src="http://oflannabhra.com/assets/img/utility.png" alt="The Utility / Inspector Pane selection menu" /></p>
+<p><img src="http://oflannabhra.com/assets/img/utility.png" alt="The Utility / Inspector Pane selection menu"></p>
 
-<h3 id="utility-pane">Utility Pane</h3>
+<h3>Utility Pane</h3>
+
 <ul>
-  <li>File Inspector (<code>Opt ⌘ 1</code>)</li>
-  <li>Quick Help Inspector (<code>Opt ⌘ 2</code>)</li>
-  <li>Identity Inspector (<code>Opt ⌘ 3</code>)</li>
-  <li>Attributes Inspector (<code>Opt ⌘ 4</code>)</li>
-  <li>Size Inspector (<code>Opt ⌘ 5</code>)</li>
-  <li>Connections Inspector (<code>Opt ⌘ 6</code>)</li>
+<li>File Inspector (<code>Opt ⌘ 1</code>)</li>
+<li>Quick Help Inspector (<code>Opt ⌘ 2</code>)</li>
+<li>Identity Inspector (<code>Opt ⌘ 3</code>)</li>
+<li>Attributes Inspector (<code>Opt ⌘ 4</code>)</li>
+<li>Size Inspector (<code>Opt ⌘ 5</code>)</li>
+<li>Connections Inspector (<code>Opt ⌘ 6</code>)</li>
 </ul>
 
-<p><img src="http://oflannabhra.com/assets/img/editor.png" alt="The Editor Pane selection menu" /></p>
+<p><img src="http://oflannabhra.com/assets/img/editor.png" alt="The Editor Pane selection menu"></p>
 
-<h3 id="editor">Editor</h3>
+<h3>Editor</h3>
+
 <ul>
-  <li>Standard Editor (<code>⌘ Ret</code>)</li>
-  <li>Assistant Editor (<code>Opt ⌘ Ret</code>)</li>
-  <li>Version Editor (<code>Opt Shft ⌘ Ret</code>)</li>
+<li>Standard Editor (<code>⌘ Ret</code>)</li>
+<li>Assistant Editor (<code>Opt ⌘ Ret</code>)</li>
+<li>Version Editor (<code>Opt Shft ⌘ Ret</code>)</li>
 </ul>
 </div>
 
@@ -151,7 +158,27 @@
         &mdash; <span class="categories"><a class='category' href='/categories/code/'>code</a></span>
       
     </div>
-    <div class="entry-social footer"><!-- Post footer social buttons go here --></div>
+    <div class="entry-social footer"><!-- Post footer social buttons go here -->
+
+<div class="row">
+	<div class="text-center col-xs-6 col-xs-offset-3 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-5 col-lg-2 col-md-offset-5">
+	
+	<a href="http://twitter.com/oflannabhra"><span class="fa fa-twitter-square fa-lg"></span></a>
+	
+	
+	<a href="http://twitter.com/Ben Flannery"><span class="fa fa-facebook-square fa-lg"></span></a>
+	
+	
+	<a href="http://instagram.com/oflannabhra"><span class="fa fa-instagram fa-lg"></span></a>
+	
+	
+	<a href="http://github.com/oflannabhra"><span class="fa fa-github fa-lg"></span></a>
+	
+	
+	<a href="mailto:oflannabhra@gmail.com"><span class="fa fa-envelope fa-lg"></span></a>
+	
+</div>
+</div></div>
   </footer>
 </article>
 <ul class="pager">

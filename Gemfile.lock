@@ -1,9 +1,9 @@
 GIT
-  remote: git://github.com/oflannabhra/genesis-theme.git
-  revision: 1be0e1ac820909f84555ea552c74a38b6f3e6d11
-  branch: master
+  remote: git://github.com/oflannabhra/octopress-bootswatch.git
+  revision: 2f5081683db0f367cc54ab7fe51e7b779c39479a
+  branch: development
   specs:
-    octopress-genesis-theme (0.0.4)
+    octopress-bootswatch (0.0.1)
       octopress-abort-tag
       octopress-assign-tag
       octopress-autoprefixer
@@ -16,6 +16,14 @@ GIT
       octopress-linkblog
       octopress-return-tag
       octopress-wrap-tag
+
+GIT
+  remote: git://github.com/oflannabhra/octopress-spacegray.git
+  revision: cedff9f8e107cf4105cfd720a7f3ca9b1793934f
+  branch: development
+  specs:
+    octopress-spacegray (1.0.3)
+      octopress-ink (~> 1.0.0.rc)
 
 GEM
   remote: https://rubygems.org/
@@ -175,8 +183,9 @@ PLATFORMS
 
 DEPENDENCIES
   octopress (~> 3.0.0.rc)
+  octopress-bootswatch!
   octopress-codefence
-  octopress-genesis-theme!
   octopress-gist
   octopress-ink
   octopress-markdown-tag
+  octopress-spacegray!
