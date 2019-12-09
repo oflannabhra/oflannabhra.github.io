@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ben Flannery | Web &amp; iOS Developer &lt;br&gt;&lt;small&gt;Lexington, KY&lt;/small&gt;</title>
-
+<meta charset="utf-8">
+<title>Ben Flannery | Software Engineer &lt;br&gt;&lt;small&gt;Lexington, KY&lt;/small&gt;</title>
 <link href="http://netdna.bootstrapcdn.com/bootswatch/3.1.1/readable/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
-<link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
-
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 <style type="text/css">
-
 .pdf blockquote {
   top: 0px;
   right: 20px;
@@ -57,6 +50,12 @@
 .pdf .tel {
   display: block !important;
 }
+.pdf .page-break {
+  page-break-before: always;
+}
+.pdf #footer {
+  display: block !important;
+}
 
 #header ul {
   margin-left: 0px;
@@ -73,6 +72,17 @@
 }
 #header small {
   color: #83A7CA;
+}
+h4 {
+  text-align: left;
+  color: #376794;
+}
+h4 p {
+  font-size: .80em;
+}
+h4 p span.date {
+  font-style: italic;
+  font-weight: normal;
 }
 h3 {
   text-align: center;
@@ -105,6 +115,7 @@ ul {
 }
 a {
   color: #376794;
+  font-weight: bold;
 }
 a:hover {
   color: #376794;
@@ -152,20 +163,19 @@ a:hover {
 </style>
 </head>
 <body>
-
     <div class="container">
         <div id="header" class="row">
   <div class="col-xs-12 col-sm-9 col-md-9 col-lg-10">
     <h1>Ben Flannery</h1>
-    <h2>Web & iOS Developer <br><small>Lexington, KY</small></h2>
+    <h2>Software Engineer <br><small>Lexington, KY</small></h2>
   </div>
   <div class="col-xs-12 col-sm-3 col-md-3 col-lg-2 contact well well-sm">
     <ul class="row fa-ul">
-    <li class="fa fa-envelope col-xs-3 col-sm-12 col-md-12 col-lg-12"><a href="mailto:ben.flannery@gmail.com">email</a></li>
-      <li class="fa fa-desktop col-xs-3 col-sm-12 col-md-12 col-lg-12"><a href="http://oflannabhra.com">web</a></li>
-      <li class="fa fa-github col-xs-3 col-sm-12 col-md-12 col-lg-12"><a href="http://www.github.com/oflannabhra">GitHub</a></li>
+      <li class="fa fa-envelope col-xs-3 col-sm-12 col-md-12 col-lg-12"><a href="mailto:ben.flannery@gmail.com"> email</a></li>
+      <li class="fa fa-desktop col-xs-3 col-sm-12 col-md-12 col-lg-12"><a href="http://oflannabhra.com"> web</a></li>
+      <li class="fab fa-github col-xs-3 col-sm-12 col-md-12 col-lg-12"><a href="http://www.github.com/oflannabhra"> GitHub</a></li>
       <li class="fa fa-phone hidden-xs col-sm-12 col-md-12 col-lg-12 tel">(859) 338-3460</li>
-      <li class="fa fa-file-text col-xs-3 col-sm-12 col-md-12 col-lg-12 pdflink"><a href="resume.pdf">PDF</a></li>
+      <li class="far fa-file col-xs-3 col-sm-12 col-md-12 col-lg-12 pdflink"><a href="resume.pdf"> PDF</a></li>
     </ul>
   </div>
 </div>
@@ -176,13 +186,13 @@ a:hover {
   <h3 class="col-md-3">Profile</h3>
   <div class="col-md-9 content">
     <p>
-      I am a PHP and iOS Developer with 3 years experience, which include exposure to Javascript, SQL, API Design, jQuery, and CSS.
+      I am a Software Engineer with over 8 years of experience, across a variety of domains: application, native mobile, API backend, firmware, and networking protocol design.
     </p>
     <p>
-      The direction of modern PHP excites me &#8212; FIG PSR Standards, HHVM & PHP 7, PHP SPL, modern frameworks such as Symfony2, Laravel, Slim & Silex, and the general adoption of SOLID Software Engineering principles give me hope for the future of PHP and the redemption of its reputation.
+      My career has been marked by an ability to quickly pick up whatever technology or skills the business needs have dictated, an ability to work well within any team, and 
     </p>
     <p>
-      I love finding the intersection points of software development and my other interests: from writing small scripts to simplify my photography workflow, to using APIs to identify and track the music I listen to on vinyl. I see each of these as an opportunity to solve a problem and expose myself to new domains and technologies.
+      I&#8217;m seeking a position at an engineering-forward company that utilizes industry leading best practices, and which provides a technical career progress track.
     </p>
   </div>
 </div>
@@ -190,90 +200,123 @@ a:hover {
 <hr>
 
 <div id="skills" class="row">
-
   <h3 class="col-md-3"> Skills </h3>
   <div class="col-md-9 content">
-    <h4> PHP </h4>
+    <h4> Languages </h4>
     <ul>
-      <li> <strong>Frameworks / Tooling</strong> - I have minimal experience in Symfony 2 and Laravel 4.0+ and have enjoyed their fully mature features, clean MVC structure and powerful templating engines. I also have extensive experience maintaining, upgrading, and migrating legacy PHP applications. I have worked in both proprietary CMS systems and WordPress.</li>
+      <li> <strong>Swift</strong> - I&#8217;ve used Swift from version 2.0 to the current 5.1. I have shipped multiple apps in Swift</li>
+      <li> <strong>Objective-C</strong> - I&#8217;ve worked in many Objective-C codebases, both to maintain current features and add new features.</li>
+      <li> <strong>C/C++</strong> - I have worked in several firmware projects that have been pure C/C++ code.</li>
+      <li> <strong>PHP</strong> - I have used PHP mostly in backend API development and in content management systems.</li>
+      <li> <strong>Javascript</strong> - I do not have extensive Javascript experience, but have used it in all front-end work that I&#8217;ve done.</li>
     </ul>
-
-
-    <h4> Objective-C </h4>
+    <h4> Frameworks / Tooling </h4>
     <ul>
-      <li>I have developed applications for iOS 6, 7, and 8, and have enjoyed seeing UIKit grow.</li>
-      <li><strong>Frameworks</strong> - UIKit, Core Data and MapKit are Cocoa Touch frameworks I have experience in. My favorite, must-have open source libraries are
-
-        <ul>
-          <li>Masonry, to maintain sanity while using AutoLayout</li>
-          <li>AFNetworking, for its handy async categories added onto UIImageView and general pain-free HTTP requests</li>
-          <li>FMDB, for doing any lightweight database work, because it is quick and simple when CoreData is overkill</li>
-        </ul>
-      </li>
+      <li><strong>iOS:</strong> UIKit, CoreData, MapKit, Interface Builder & AutoLayout, XCTest, fastlane</li>
+      <li><strong>Web:</strong> Laravel, Lumen, Ruby on Rails, AWS</li>
+      <li><strong>Firmware/Embedded:</strong> - FreeRTOS, TouchGFX, STMCube, gcc, IAR</li>
+      <li><strong>Networking / Protocols:</strong> - Bluetooth, Thread, HTTP, IP, TCP & UDP
+      <li><strong>CI/CD:</strong> - I have administrated Linux servers, used Jenkins to build CI/CD pipelines, used make/cmake for builds, and used bash for scripting</li>
     </ul>
-
-    <h4> System Administration / Dev Ops </h4>
+    <h4> Additional </h4>
     <ul>
-      <li>I have experience primarily in the LAMP and LEMP stacks, specifically CentOS and RHEL. For deployment and configuration I have made use of Puppet and Capistrano. Locally, I prefer developing using Vagrant, but have also used AMPPS, MAMP and XAMPP.</li>
-    </ul>
-
-    <h4> Other skills </h4>
-    <ul>
-      <li>I&#8217;d be happy to discuss my experience in jQuery, Javascript, CSS, SQLite, MySQL, Apache, Nginx, Swift, Composer, bash, git, RESTful APIs, SOAP APIs and more. 
+      <li>I&#8217;d be happy to discuss my experience in jQuery, CSS, SQLite, MySQL, SQLite, Nginx & Apache, bash, git, RESTful APIs, mDNS, and more.
       </li>
     </ul>
   </div>
 </div>
 
-<hr>
+<hr class="page-break">
 
 <div id="experience" class="row">
   <div class="col-md-3">
     <h3> Experience </h3>
   </div>
   <div class="col-md-9 content">
-    <h4> Software Development Consulting </h4>
-      <dl>
-        <dt>Freelance</dt>
-        <dd><em>2010-2013</em></dd>
-      </dl>
-      <ul>
-        <li><strong>Skills Used</strong> - Objective-C, ruby, Rails, git, HTML</li>
-        <li><strong>Role Overview</strong>: Part-time freelancer primarly doing client work in iOS and Ruby on Rails. Worked with a designer and front end developer to meet clients expectations and milestones</li>
-        <li><strong>Interesting Challenges</strong> - Built a financial services web application that allowed financial advisors to track their performance for individual clients and portfolios. Built an iOS app for a client&#8217;s internal use that allowed handwritten notes on PDFs.</li>
-      </ul>
-    
+    <h4> Big Ass Fans
+      <p>
+        iOS Developer and Firmware Developer <span class="date">(2015-current)</span>
+      </p>
+    </h4>
+    <ul>
+      <li><strong>Role Overview</strong> - At Big Ass Fans, my responsibilities have shifted with the demands of the business. I was hired as an iOS developer working in Objective-C within the Controls group, but my responsibilities quickly came to include: representing the company in the Thread Group, helping to define new hardware projects, leading a team as Product Owner for a time, developing firmware in C/C++, and developing new applications in Swift.</li>
+      <li><strong>Notable projects</strong>
+        <ul>
+          <li><a href="https://apps.apple.com/us/app/haiku-by-baf/id902021647">Haiku by BAF</a> - I worked with another developer to add new features to this iOS application which controls all of BAF&#8217;s residential products: fans, lights, wall controls. Features included: grouping, smart thermostat integration, and Apple HomeKit.</li>
+          <li><a href="https://www.threadgroup.org">Thread Group</a> - I represented the interests of the company as the vice-chair of the Commercial Working Group, which was responsible for generating the 1.2 Thread Networking Specification&#8217;s Commercial Extensions. Specifically, I helped write a proposal to support IP-based, secure commissioning and decommissionsing of Thread devices. Later, I represented BAF on the Thread Group Board of Directors.</li>
+          <li><strong>BASNet</strong> - This was a suite of 5 hardware devices that would allow BAF to do wireless retrofits in the commercial space. The devices consisted of fans, lights, and wall switches that communicated over a Thread mesh network. I helped define the feature set, design the communications API, build the iOS application, and even served as Product Owner for a portion of the project. It was cancelled after 18 months, even though it achieved MVP status.</li>
+          <li><a href="https://www.bigassfans.com/docs/bafcon/cutsheet-bafcon.pdf">BAFCon</a> - BAFCon is a touchscreen controller for BAF&#8217;s industrial fans. I helped define the product features, and was one of the primary developers on a team of four. I was responsible for selecting a UI framework, implementing major features in our embedded stack, architecting our device model, and defining a Bluetooth API to support OTA firmware updates. This product was so well-liked by management that is was fast-tracked and attached to all sales of BAF&#8217;s premium products.</li>
+          <li><a href="https://apps.apple.com/us/app/bafcon-updates/id1403542146">BAFCon Updates</a> - This is the iOS application responsible for updating BAFCon firmware over Bluetooth. I was the sole developer, and completed the project in 2 months. It supports downloading firmware from our servers, connecting over Bluetooth to our BAFCons, and updating their firmware. It can support multiple, independent connections and updates, while giving the user valuable feedback during the process.</li>
+          <li><a href="https://apps.apple.com/us/app/i6-by-baf/id1472272574">i6 by BAF</a> - BAF launched a new residential fan, and I worked with another developer to almost completely refactor the Haiku by BAF codebase. This effort is essentially a new platform for all next generation BAF residential products. I was responsible for updating our CoreData model, implementing our protobuf API, handling all startup tasks, implementing our account login, and the entire device on-boarding process over Bluetooth, amongst others.</li>
+          <li><strong>Jenkins CI/CD build pipleine</strong> - Before I was at BAF, all iOS builds were done on developer computers. I built an automated pipeline on our shared Jenkins infrastructure to:
+            <ul>
+              <li>Build all Pull Requests in Github</li>
+              <li>Run all unit tests</li>
+              <li>Report any builld or test failures to Slack and Github</li>
+              <li>Upload build artifacts for successful, tagged builds to App Store Connect</li>
+              <li>Release new builds to TestFlight</li>
+              <li>Upload de-symbolication files to Fabric for crash-reporting</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><strong>Skills Used</strong> - Objective-C, Swift, C, C++, FreeRTOS, Networking Protocol design, API Design</li>
+    </ul>
+        
+    <h4> Circumference, LTD
+      <p>
+        iOS Developer and Backend Web Developer <span class="date">(2015)</span>
+      </p>
+    </h4>
+    <ul>
+      <li><strong>Role Overview</strong> - Circumference is a small, lean start-up with multiple iOS products and services. As their first, full-time engineer, I was brought on to take over development of their primary product, <a href="http://www.getverses.com">Verses</a>. I worked closely with the CEO and lead product designer to plan and design new features, roadmap feature-sets and releases, and implement all new features.</li>
+      <li><strong>Notable projects</strong>
+        <ul>
+          <li><a href="https://apps.apple.com/us/app/verses-bible-memory/id939461663">Verses</a> - Created an Apple Watch app, implemented StoreKit to convert revenue model to in-app purchases, integrated with Twitter and Facebook for sharing content.</li>
+          <li>Designed and built a web platform for content creation and management, integrating with Parse and Firebase cloud backends.</li>
+        </ul>
+      </li>
+      <li><strong>Skills Used</strong> - Objective-C, PHP, git, Javascript, Laravel, jQuery, CSS, Composer, RESTful APIs, Agile/Scrum</li>
+    </ul>
 
-    <h4> eLink Design </h4>
-      <dl>
-        <dt>Backend PHP Developer and iOS Developer</dt>
-        <dd><em>3/2014-5/2015</em></dd>
-      </dl>
-      <ul>
-        <li><strong>Skills Used</strong> - PHP, Objective-C, LAMP, git, Symfony 2, Laravel, Wordpress, Javascript, jQuery, CSS, Composer, SOAP & RESTful APIs, HTML, CSS, SCRUM</li>
-        <li><strong>Role Overview</strong> - I joined a small team that was responsible for everything from ecommerce sites; smaller, informational sites; large-scale international web applications; and enterprise mobile applications and intranets. Depending on the project, my role has been to manage a small team, be the sole developer, or work efficiently as part of a larger team.</li>
-        <li><strong>Interesting Challenges</strong> - Introduced several best-practices into the developer workflow: version control (git, and git-flow for branching), library versioning and dependency management (both through Cocoapods and Composer), and the use of local, development, and production environments. Spearheaded conversion of the &#8220;modules&#8221; of an internal framework and CMS to Composer packages, creation of a private Composer repository through Satis, and integration with GitLab for automatic updating. Built an object-oriented push notification server for iOS using PHP and sockets.</li>
-      </ul>
-    </li>
+    <h4> eLink Design
+      <p>
+        Backend PHP Developer and iOS Developer <span class="date">(2015-2014)</span>
+      </p>
+    </h4>
+    <ul>
+      <li><strong>Role Overview</strong> - I was part of a small team that was responsible for everything from ecommerce sites; smaller, informational sites; large-scale international web applications; and enterprise mobile applications and intranets. Depending on the project, my role included managing a small team, being the sole developer, or work efficiently as part of a larger team.</li>
+      <li><strong>Notable projects</strong>
+        <ul>
+          <li>Introduced several best-practices into the developer workflow: version control (git, and git-flow for branching), library versioning and dependency management (both through Cocoapods and Composer), and the use of local, development, and production environments.</li>
+          <li>Spearheaded conversion of the &#8220;modules&#8221; of an internal framework and CMS to Composer packages, creation of a private Composer repository through Satis, and integration with GitLab for automatic updating.</li>
+          <li>Built an object-oriented push notification server for iOS using PHP and sockets.</li>
+          <li><a href="https://apps.apple.com/us/app/bluegrass-staking/id872589656">Bluegrass Staking</a> - Created an iOS application that wrapped an existing web application to allow horse owners to enter their horses in races, view performance reports, and facilitating payments. It also allowed users to be notified of race lineup changes and results.</li>
+          <li><a href="https://obckitchen.com">OBC Kitchen</a> - Created a custom menu iOS app deployed on iPads to each table, with management backend. Allowed for management to update the menu, pair drinks with entrees, and update pictures.</li>
+        </ul>
+      </li>
+      <li><strong>Skills Used</strong> - PHP, Objective-C, LAMP, git, Symfony 2, Laravel, Wordpress, Javascript, jQuery, CSS, Composer, SOAP & RESTful APIs, HTML, CSS, SCRUM</li>
+    </ul>
 
-
-  <h4> Circumference, LTD </h4>
-      <dl>
-        <dt>iOS Developer and Backend Web Developer</dt>
-        <dd><em>4/2015-current</em></dd>
-      </dl>
-      <ul>
-        <li><strong>Skills Used</strong> - Objective-C, PHP, git, Javascript, Laravel, jQuery, CSS, Composer, RESTful APIs, Agile/Scrum</li>
-        <li><strong>Role Overview</strong> - Circumference is a small, lean start-up with multiple iOS products and services. As their first, full-time engineer, I was brought on to take over development of their primary product, <a href="http://www.getverses.com">Verses</a>. I worked closely with the CEO and lead product designer to plan and design new features, roadmap feature-sets and releases, and implement all new features.</li>
-        <li><strong>Interesting Challenges</strong> - Create Watch OS app, Implement StoreKit and convert revenue model to in-app purchases, integrate with Twitter and Facebook for sharing content, design and build a web platform for content creation and management, integrating with Parse and Firebase cloud backends. </li>
-      </ul>
-    </li>
+    <h4> Software Development Consulting
+      <p>
+        Freelance <span class="date">(2013-2010)</span>
+      </p>
+    </h4>
+    <ul>
+      <li><strong>Role Overview</strong>: Part-time freelancer primarly doing client work in iOS and Ruby on Rails. Worked with a designer and front end developer to meet clients expectations and milestones</li>
+      <li><strong>Notable projects</strong>
+        <ul>
+          <li>Built a financial services web application that allowed financial advisors to track their performance for individual clients and portfolios.</li>
+          <li>Built an iOS app for a client&#8217;s internal use that allowed handwritten notes on PDFs.</li>
+        </ul>
+      </li>
+      <li><strong>Skills Used</strong> - Objective-C, ruby, Rails, git, HTML</li>
+    </ul>
   </div>
 </div>
 
 <div id="footer">
-  <h3> Footer </h3>
-
   <a href="http://www.oflannabhra.com">Ben Flannery</a> &#8212; <a href="mailto:ben.flannery@gmail.com">ben.flannery@gmail.com</a> &#8212; (859) 338-3460
 </div>
 
