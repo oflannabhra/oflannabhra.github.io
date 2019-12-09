@@ -53,8 +53,11 @@
 .pdf .page-break {
   page-break-before: always;
 }
-.pdf #footer {
-  display: block !important;
+.pdf .footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 #header ul {
@@ -186,13 +189,13 @@ a:hover {
   <h3 class="col-md-3">Profile</h3>
   <div class="col-md-9 content">
     <p>
-      I am a Software Engineer with over 8 years of experience, across a variety of domains: application, native mobile, API backend, firmware, and networking protocol design.
+      I am a Software Engineer with over 9 years of experience, across a variety of domains: application, native mobile, API backend, firmware, and networking protocol design.
     </p>
     <p>
-      My career has been marked by an ability to quickly pick up whatever technology or skills the business needs have dictated, an ability to work well within any team, and 
+      My career has been marked by an ability to quickly pick up whatever technology or skills the business needs have dictated, to work well within any team, and to introduce modern development practices wherever I&#8217;ve been.
     </p>
     <p>
-      I&#8217;m seeking a position at an engineering-forward company that utilizes industry leading best practices, and which provides a technical career progress track.
+      I&#8217;m seeking a position at an engineering-forward company that utilizes industry-leading best practices, and which provides a technical career progress track.
     </p>
   </div>
 </div>
@@ -220,7 +223,7 @@ a:hover {
     </ul>
     <h4> Additional </h4>
     <ul>
-      <li>I&#8217;d be happy to discuss my experience in jQuery, CSS, SQLite, MySQL, SQLite, Nginx & Apache, bash, git, RESTful APIs, mDNS, and more.
+      <li>I&#8217;d be happy to discuss my experience in jQuery, CSS, SQLite, MySQL, Nginx & Apache, bash, git, RESTful APIs, mDNS, and more.
       </li>
     </ul>
   </div>
@@ -244,9 +247,9 @@ a:hover {
         <ul>
           <li><a href="https://apps.apple.com/us/app/haiku-by-baf/id902021647">Haiku by BAF</a> - I worked with another developer to add new features to this iOS application which controls all of BAF&#8217;s residential products: fans, lights, wall controls. Features included: grouping, smart thermostat integration, and Apple HomeKit.</li>
           <li><a href="https://www.threadgroup.org">Thread Group</a> - I represented the interests of the company as the vice-chair of the Commercial Working Group, which was responsible for generating the 1.2 Thread Networking Specification&#8217;s Commercial Extensions. Specifically, I helped write a proposal to support IP-based, secure commissioning and decommissionsing of Thread devices. Later, I represented BAF on the Thread Group Board of Directors.</li>
-          <li><strong>BASNet</strong> - This was a suite of 5 hardware devices that would allow BAF to do wireless retrofits in the commercial space. The devices consisted of fans, lights, and wall switches that communicated over a Thread mesh network. I helped define the feature set, design the communications API, build the iOS application, and even served as Product Owner for a portion of the project. It was cancelled after 18 months, even though it achieved MVP status.</li>
+          <li><strong>BASNet</strong> - This was a suite of 5 hardware devices that would allow BAF to do wireless retrofits in the commercial space. The devices consisted of fans, lights, and wall switches that communicated over a Thread mesh network. I helped define the feature set, design the communications API, and build the iOS application.</li>
           <li><a href="https://www.bigassfans.com/docs/bafcon/cutsheet-bafcon.pdf">BAFCon</a> - BAFCon is a touchscreen controller for BAF&#8217;s industrial fans. I helped define the product features, and was one of the primary developers on a team of four. I was responsible for selecting a UI framework, implementing major features in our embedded stack, architecting our device model, and defining a Bluetooth API to support OTA firmware updates. This product was so well-liked by management that is was fast-tracked and attached to all sales of BAF&#8217;s premium products.</li>
-          <li><a href="https://apps.apple.com/us/app/bafcon-updates/id1403542146">BAFCon Updates</a> - This is the iOS application responsible for updating BAFCon firmware over Bluetooth. I was the sole developer, and completed the project in 2 months. It supports downloading firmware from our servers, connecting over Bluetooth to our BAFCons, and updating their firmware. It can support multiple, independent connections and updates, while giving the user valuable feedback during the process.</li>
+          <li><a href="https://apps.apple.com/us/app/bafcon-updates/id1403542146">BAFCon Updates</a> - This is the iOS application responsible for updating BAFCon firmware over Bluetooth. I was the sole developer, and completed the project in 2 months. It supports downloading firmware from our servers, connecting over Bluetooth to BAFCons, and updating their firmware. It can support multiple, independent connections and updates, while giving the user valuable feedback during the process.</li>
           <li><a href="https://apps.apple.com/us/app/i6-by-baf/id1472272574">i6 by BAF</a> - BAF launched a new residential fan, and I worked with another developer to almost completely refactor the Haiku by BAF codebase. This effort is essentially a new platform for all next generation BAF residential products. I was responsible for updating our CoreData model, implementing our protobuf API, handling all startup tasks, implementing our account login, and the entire device on-boarding process over Bluetooth, amongst others.</li>
           <li><strong>Jenkins CI/CD build pipleine</strong> - Before I was at BAF, all iOS builds were done on developer computers. I built an automated pipeline on our shared Jenkins infrastructure to:
             <ul>
@@ -260,7 +263,7 @@ a:hover {
           </li>
         </ul>
       </li>
-      <li><strong>Skills Used</strong> - Objective-C, Swift, C, C++, FreeRTOS, Networking Protocol design, API Design</li>
+      <li><strong>Skills Used</strong> - Objective-C, Swift, C, C++, FreeRTOS, Networking Protocol design, API design</li>
     </ul>
         
     <h4> Circumference, LTD
@@ -269,7 +272,7 @@ a:hover {
       </p>
     </h4>
     <ul>
-      <li><strong>Role Overview</strong> - Circumference is a small, lean start-up with multiple iOS products and services. As their first, full-time engineer, I was brought on to take over development of their primary product, <a href="http://www.getverses.com">Verses</a>. I worked closely with the CEO and lead product designer to plan and design new features, roadmap feature-sets and releases, and implement all new features.</li>
+      <li><strong>Role Overview</strong> - Circumference is a small, lean start-up with multiple iOS products and services. As their first full-time engineer, I was brought on to take over development of their primary product, <a href="http://www.getverses.com">Verses</a>. I worked closely with the CEO and lead product designer to plan and design new features, roadmap feature-sets and releases, and implement all new features.</li>
       <li><strong>Notable projects</strong>
         <ul>
           <li><a href="https://apps.apple.com/us/app/verses-bible-memory/id939461663">Verses</a> - Created an Apple Watch app, implemented StoreKit to convert revenue model to in-app purchases, integrated with Twitter and Facebook for sharing content.</li>
@@ -316,7 +319,7 @@ a:hover {
   </div>
 </div>
 
-<div id="footer">
+<div id="footer" class="footer">
   <a href="http://www.oflannabhra.com">Ben Flannery</a> &#8212; <a href="mailto:ben.flannery@gmail.com">ben.flannery@gmail.com</a> &#8212; (859) 338-3460
 </div>
 
