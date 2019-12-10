@@ -50,6 +50,9 @@
 .pdf .tel {
   display: block !important;
 }
+.pdf hr {
+  display: none !important;
+}
 .pdf .page-break {
   page-break-before: always;
 }
@@ -89,6 +92,8 @@ h4 p span.date {
 }
 h3 {
   text-align: center;
+  margin-top: 0px;
+  margin-bottom: 0px;
   padding-top: 15px;
   padding-bottom: 15px;
   color: #376794;
@@ -96,6 +101,9 @@ h3 {
 h1,
 h2 {
   text-align: center;
+}
+hr {
+  margin: 10px;
 }
 ul {
   padding-left: 10px;
@@ -106,7 +114,7 @@ ul {
   font-size: .85em;
 }
 .content {
-  margin-top: 22px;
+  margin-top: 0px;
 }
 .bs-callout {
   padding: 15px 30px 15px 15px;
@@ -189,7 +197,7 @@ a:hover {
   <h3 class="col-md-3">Profile</h3>
   <div class="col-md-9 content">
     <p>
-      I am a Software Engineer with over 9 years of experience, across a variety of domains: application, native mobile, API backend, firmware, and networking protocol design.
+      I am a Software Engineer with over 9 years of experience, across a variety of domains including application, native mobile, API backend, firmware, and networking protocol design.
     </p>
     <p>
       My career has been marked by an ability to quickly pick up whatever technology or skills the business needs have dictated, to work well within any team, and to introduce modern development practices wherever I&#8217;ve been.
@@ -207,29 +215,26 @@ a:hover {
   <div class="col-md-9 content">
     <h4> Languages </h4>
     <ul>
-      <li> <strong>Swift</strong> - I&#8217;ve used Swift from version 2.0 to the current 5.1. I have shipped multiple apps in Swift</li>
-      <li> <strong>Objective-C</strong> - I&#8217;ve worked in many Objective-C codebases, both to maintain current features and add new features.</li>
-      <li> <strong>C/C++</strong> - I have worked in several firmware projects that have been pure C/C++ code.</li>
-      <li> <strong>PHP</strong> - I have used PHP mostly in backend API development and in content management systems.</li>
-      <li> <strong>Javascript</strong> - I do not have extensive Javascript experience, but have used it in all front-end work that I&#8217;ve done.</li>
+      <li> <strong>Swift:</strong> I&#8217;ve used Swift from version 2.0 to the current 5.1. I have shipped multiple apps in Swift.</li>
+      <li> <strong>Objective-C:</strong> I&#8217;ve worked in many Objective-C codebases, both to maintain current features and add new features.</li>
+      <li> <strong>C/C++:</strong> I have worked in several firmware projects that have been pure C/C++ code.</li>
+      <li> <strong>PHP:</strong> I have used PHP mostly in backend API development and in content management systems.</li>
+      <li> <strong>Javascript:</strong> I do not have extensive Javascript experience, but have used it in all front-end work that I&#8217;ve done.</li>
     </ul>
     <h4> Frameworks / Tooling </h4>
     <ul>
       <li><strong>iOS:</strong> UIKit, CoreData, MapKit, Interface Builder & AutoLayout, XCTest, fastlane</li>
       <li><strong>Web:</strong> Laravel, Lumen, Ruby on Rails, AWS</li>
-      <li><strong>Firmware/Embedded:</strong> - FreeRTOS, TouchGFX, STMCube, gcc, IAR</li>
-      <li><strong>Networking / Protocols:</strong> - Bluetooth, Thread, HTTP, IP, TCP & UDP
-      <li><strong>CI/CD:</strong> - I have administrated Linux servers, used Jenkins to build CI/CD pipelines, used make/cmake for builds, and used bash for scripting</li>
-    </ul>
-    <h4> Additional </h4>
-    <ul>
-      <li>I&#8217;d be happy to discuss my experience in jQuery, CSS, SQLite, MySQL, Nginx & Apache, bash, git, RESTful APIs, mDNS, and more.
+      <li><strong>Firmware/Embedded:</strong> FreeRTOS, TouchGFX, STMCube, gcc, IAR</li>
+      <li><strong>Networking / Protocols:</strong> Bluetooth, Thread, HTTP, IP, TCP & UDP
+      <li><strong>CI/CD:</strong> Linux servers, Jenkins for CI/CD pipelines, make/cmake for builds, and bash for scripting</li>
+      <li><strong>Additional</strong> I&#8217;d be happy to discuss my experience in jQuery, CSS, SQLite, MySQL, Nginx & Apache, bash, git, RESTful APIs, mDNS, and more.
       </li>
     </ul>
   </div>
 </div>
 
-<hr class="page-break">
+<hr>
 
 <div id="experience" class="row">
   <div class="col-md-3">
@@ -238,11 +243,12 @@ a:hover {
   <div class="col-md-9 content">
     <h4> Big Ass Fans
       <p>
-        iOS Developer and Firmware Developer <span class="date">(2015-current)</span>
+        iOS Developer and Firmware Developer <span class="date">(current-2015)</span>
       </p>
     </h4>
     <ul>
-      <li><strong>Role Overview</strong> - At Big Ass Fans, my responsibilities have shifted with the demands of the business. I was hired as an iOS developer working in Objective-C within the Controls group, but my responsibilities quickly came to include: representing the company in the Thread Group, helping to define new hardware projects, leading a team as Product Owner for a time, developing firmware in C/C++, and developing new applications in Swift.</li>
+      <li><strong>Role Overview</strong> - At Big Ass Fans, my responsibilities have shifted with the demands of the business. I was hired as an iOS developer working in Objective-C within the Controls group, but my responsibilities quickly came to include representing the company in the Thread Group, helping to define new hardware projects, leading a team as Product Owner, developing firmware in C/C++, and developing new applications in Swift.</li>
+      <div class="page-break"></div>
       <li><strong>Notable projects</strong>
         <ul>
           <li><a href="https://apps.apple.com/us/app/haiku-by-baf/id902021647">Haiku by BAF</a> - I worked with another developer to add new features to this iOS application which controls all of BAF&#8217;s residential products: fans, lights, wall controls. Features included: grouping, smart thermostat integration, and Apple HomeKit.</li>
@@ -251,19 +257,12 @@ a:hover {
           <li><a href="https://www.bigassfans.com/docs/bafcon/cutsheet-bafcon.pdf">BAFCon</a> - BAFCon is a touchscreen controller for BAF&#8217;s industrial fans. I helped define the product features, and was one of the primary developers on a team of four. I was responsible for selecting a UI framework, implementing major features in our embedded stack, architecting our device model, and defining a Bluetooth API to support OTA firmware updates. This product was so well-liked by management that is was fast-tracked and attached to all sales of BAF&#8217;s premium products.</li>
           <li><a href="https://apps.apple.com/us/app/bafcon-updates/id1403542146">BAFCon Updates</a> - This is the iOS application responsible for updating BAFCon firmware over Bluetooth. I was the sole developer, and completed the project in 2 months. It supports downloading firmware from our servers, connecting over Bluetooth to BAFCons, and updating their firmware. It can support multiple, independent connections and updates, while giving the user valuable feedback during the process.</li>
           <li><a href="https://apps.apple.com/us/app/i6-by-baf/id1472272574">i6 by BAF</a> - BAF launched a new residential fan, and I worked with another developer to almost completely refactor the Haiku by BAF codebase. This effort is essentially a new platform for all next generation BAF residential products. I was responsible for updating our CoreData model, implementing our protobuf API, handling all startup tasks, implementing our account login, and the entire device on-boarding process over Bluetooth, amongst others.</li>
-          <li><strong>Jenkins CI/CD build pipleine</strong> - Before I was at BAF, all iOS builds were done on developer computers. I built an automated pipeline on our shared Jenkins infrastructure to:
-            <ul>
-              <li>Build all Pull Requests in Github</li>
-              <li>Run all unit tests</li>
-              <li>Report any builld or test failures to Slack and Github</li>
-              <li>Upload build artifacts for successful, tagged builds to App Store Connect</li>
-              <li>Release new builds to TestFlight</li>
-              <li>Upload de-symbolication files to Fabric for crash-reporting</li>
+          <li><strong>Jenkins CI/CD build pipleine</strong> - Before I was at BAF, all iOS builds were done on developer computers. I built an automated pipeline on our shared Jenkins infrastructure to build all Pull Requests in Github, run all unit tests, report any builld or test failures to Slack and Github, upload build artifacts for successful, tagged builds to App Store Connect, release new builds to TestFlight, upload de-symbolication files to Fabric for crash-reporting
             </ul>
           </li>
         </ul>
       </li>
-      <li><strong>Skills Used</strong> - Objective-C, Swift, C, C++, FreeRTOS, Networking Protocol design, API design</li>
+      <li><strong>Skills Used</strong> - Objective-C, Swift, C, C++, FreeRTOS, Networking Protocol design, API design, Agile/Scrum</li>
     </ul>
         
     <h4> Circumference, LTD
@@ -292,13 +291,11 @@ a:hover {
       <li><strong>Notable projects</strong>
         <ul>
           <li>Introduced several best-practices into the developer workflow: version control (git, and git-flow for branching), library versioning and dependency management (both through Cocoapods and Composer), and the use of local, development, and production environments.</li>
-          <li>Spearheaded conversion of the &#8220;modules&#8221; of an internal framework and CMS to Composer packages, creation of a private Composer repository through Satis, and integration with GitLab for automatic updating.</li>
-          <li>Built an object-oriented push notification server for iOS using PHP and sockets.</li>
           <li><a href="https://apps.apple.com/us/app/bluegrass-staking/id872589656">Bluegrass Staking</a> - Created an iOS application that wrapped an existing web application to allow horse owners to enter their horses in races, view performance reports, and facilitating payments. It also allowed users to be notified of race lineup changes and results.</li>
           <li><a href="https://obckitchen.com">OBC Kitchen</a> - Created a custom menu iOS app deployed on iPads to each table, with management backend. Allowed for management to update the menu, pair drinks with entrees, and update pictures.</li>
         </ul>
       </li>
-      <li><strong>Skills Used</strong> - PHP, Objective-C, LAMP, git, Symfony 2, Laravel, Wordpress, Javascript, jQuery, CSS, Composer, SOAP & RESTful APIs, HTML, CSS, SCRUM</li>
+      <li><strong>Skills Used</strong> - PHP, Objective-C, LAMP, git, Symfony 2, Laravel, Wordpress, Javascript, jQuery, CSS, Composer, SOAP & RESTful APIs, HTML, CSS, Agile/Scrum</li>
     </ul>
 
     <h4> Software Development Consulting
@@ -307,7 +304,7 @@ a:hover {
       </p>
     </h4>
     <ul>
-      <li><strong>Role Overview</strong>: Part-time freelancer primarly doing client work in iOS and Ruby on Rails. Worked with a designer and front end developer to meet clients expectations and milestones</li>
+      <li><strong>Role Overview</strong> - Part-time freelancer primarly doing client work in iOS and Ruby on Rails. Worked with a designer and front end developer to meet clients expectations and milestones.</li>
       <li><strong>Notable projects</strong>
         <ul>
           <li>Built a financial services web application that allowed financial advisors to track their performance for individual clients and portfolios.</li>
